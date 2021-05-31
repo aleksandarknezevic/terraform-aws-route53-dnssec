@@ -30,11 +30,6 @@ variable "route53_zone_name" {
   type        = string
 }
 
-variable "route53_zone_id" {
-  description = "ID of Route53 zone"
-  type        = string
-}
-
 variable "route53_record_ttl" {
   description = "TTL for route53 ds record in parent zone"
   type        = number
