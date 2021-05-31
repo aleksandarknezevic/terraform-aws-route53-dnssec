@@ -52,7 +52,7 @@ resource "aws_route53_record" "ds_in_parent_zone" {
   count   = var.route53_create_ds_record ? 1 : 0
   name    = var.route53_zone_name
   type    = "DS"
-  zone_id = data.aws_route53_zone.route53_parent_zone.zone_id
+  zone_id = data.aws_route53_zone.route53_parent_zone[0].zone_id
   ttl     = var.route53_record_ttl
   records = [aws_route53_key_signing_key.zone_signing_key.ds_record]
 }
